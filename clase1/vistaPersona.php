@@ -1,6 +1,9 @@
 <?php
     require 'Persona.php';
-    $Persona = new Persona();
+    $Persona = new Persona('Morty', 'Smith');
+
+    //$Persona->setNombre('Rick');
+    //$Persona->setApellido('Sánchez');
 ?>
 <!doctype html>
 <html lang="en">

@@ -5,9 +5,17 @@
         private $nombre;
         private $apellido;
 
+        public function __construct($nombre, $apellido)
+        {
+            $this->setNombre($nombre);
+            $this->setApellido($apellido);
+        }
+
         public function verDatos()
         {
-            return 'datos';
+            $mensaje = 'Nombre: '.$this->getNombre().'<br>';
+            $mensaje .= 'Apellido: '.$this->getApellido().'<br>';
+            return $mensaje;
         }
 
         /**
@@ -41,7 +49,5 @@
         {
             $this->apellido = $apellido;
         }
-
-
 
     }
