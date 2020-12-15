@@ -2,18 +2,25 @@
 
     class Conexion
     {
-        private $link;
+        private static $link;
 
-        public function conectar()
+        private function __construct()
+        {} // impedimos instanciar la clase
+
+        static function conectar()
         {
-            $this->link = new PDO(
-                'mysql:host=localhost;dbname=agencia',
-                'root',
-                'root'
-            );
-            // control de errores
-            $this->link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+            if( !isset( self::$link ) ){
+                self::$link = new PDO(
+                    'mysql:host=localhost;dbname=agencia',
+                    'root',
+                    'root'
+                );
+            }
 
-            return $this->link;
+            // control de errores
+            self::$link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+
+            return self::$link;
         }
+
     }
