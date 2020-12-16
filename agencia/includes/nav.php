@@ -1,7 +1,7 @@
 <nav class="site-header sticky-top py-2">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a href="index.php" class="mt-1">
-            <i class="fab fa-meetup fa-2x"></i>
+            <i class="fab fa-meetup fa-2x text-white"></i>
         </a>
 
 
