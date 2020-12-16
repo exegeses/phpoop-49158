@@ -26,7 +26,9 @@
 
             $stmt = $link->prepare($sql);
             $stmt->execute();
-            return 'hola';
+
+            $destinos =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $destinos;
         }
 
         ##################################
