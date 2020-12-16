@@ -11,6 +11,9 @@
         private $destDisponibles;
         private $destActivo;
 
+
+        ##################################
+        ###  getters & setters
         /**
          * @return mixed
          */
