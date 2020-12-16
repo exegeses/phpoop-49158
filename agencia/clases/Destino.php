@@ -11,6 +11,23 @@
         private $destDisponibles;
         private $destActivo;
 
+        public function listarDestinos()
+        {
+            $link = Conexion::conectar();
+            $sql = "SELECT 
+                            destID, destNombre,
+                            d.regID, r.regNombre,
+                            destPrecio, 
+                            destAsientos, destDisponibles,
+                            destActivo
+                        FROM 
+                            destinos d, regiones r
+                      WHERE d.regID = r.regID";
+
+            $stmt = $link->prepare($sql);
+            $stmt->execute();
+            return 'hola';
+        }
 
         ##################################
         ###  getters & setters

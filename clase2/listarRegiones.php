@@ -17,6 +17,8 @@
     // ejecutar
     $stmt->execute();
 
+    //mostrar($stmt->fetchAll(PDO::FETCH_ASSOC));
+
     #####################################
     #### traer datos: 2 métodos
     #### método fetch()
