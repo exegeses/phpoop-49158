@@ -139,6 +139,24 @@
             return false;
         }
 
+        public function eliminarDestino()
+        {
+            $destID = $_POST['destID'];
+            $destNombre = $_POST['destNombre'];
+            $link = Conexion::conectar();
+            $sql = "DELETE FROM destinos
+                        WHERE destID = :destID";
+            $stmt = $link->prepare($sql);
+            $stmt->bindParam(':destID', $destID, PDO::PARAM_INT);
+            if( $stmt->execute() ){
+                //registramos atributos
+                $this->setDestID($destID);
+                $this->setDestNombre($destNombre);
+                return $this;
+            }
+            return false;
+        }
+
         ##################################
         ###  getters & setters
         /**
